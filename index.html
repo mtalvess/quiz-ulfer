@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Teste da Água</title>
 
+<!-- FONTE PROFISSIONAL -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 body {
   margin:0;
-  font-family: Arial;
-  background:#0a2540;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0A2540, #1E90FF);
   color:white;
   text-align:center;
 }
@@ -22,23 +27,39 @@ body {
 
 h1 {
   font-size:26px;
+  font-weight:700;
+}
+
+h2 {
+  font-weight:600;
+}
+
+p {
+  font-weight:300;
+}
+
+.logo {
+  width:120px;
+  margin-bottom:15px;
 }
 
 button {
   width:100%;
-  padding:15px;
-  margin:8px 0;
+  padding:16px;
+  margin:10px 0;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   background:white;
-  color:#0a2540;
-  font-weight:bold;
+  color:#0A2540;
+  font-weight:600;
   cursor:pointer;
   transition:0.3s;
 }
 
 button:hover {
   transform:scale(1.05);
+  background:#00BFFF;
+  color:white;
 }
 
 .progress {
@@ -50,7 +71,7 @@ button:hover {
 
 .bar {
   height:6px;
-  background:#00ffcc;
+  background:#00BFFF;
   width:0%;
   border-radius:10px;
   transition:0.4s;
@@ -66,17 +87,22 @@ button:hover {
 }
 
 .cta {
-  background:#00ffcc;
-  color:black;
+  background:#00BFFF;
+  color:white;
   font-size:18px;
+  font-weight:700;
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
 <div class="container">
+
+<!-- LOGO (opcional) -->
+<!-- Coloque a logo da ULFER aqui se quiser -->
+<!-- <img src="logo.png" class="logo"> -->
 
 <h1>⚠️ A água que você bebe pode estar te prejudicando</h1>
 
@@ -95,12 +121,12 @@ const perguntas = [
 "Você já testou sua água?",
 "Você confia 100% nela?",
 "Tem crianças ou idosos na casa?",
-"Se tivesse impurezas invisíveis, você mudaria?"
+"Se tivesse impurezas invisíveis, você mudaria isso?"
 ];
 
 const opcoes = [
-["Torneira","Mineral","Chuva","Não sei"],
-["Sim","Não","Nunca pensei"],
+["Torneira (CAGEPA)","Água mineral","Água de chuva","Não sei"],
+["Sim","Não","Nunca pensei nisso"],
 ["Sim","Mais ou menos","Não"],
 ["Sim","Não"],
 ["Sim na hora","Talvez","Não sei"]
@@ -126,16 +152,17 @@ function proxima(){
   } else {
     document.getElementById("quiz").innerHTML = `
     <div class="fade">
-    <h2>⚠️ RESULTADO: RISCO DETECTADO</h2>
+
+    <h2>⚠️ RESULTADO: POSSÍVEL RISCO NA SUA ÁGUA</h2>
 
     <p>Sua água pode conter excesso de cloro, impurezas e contaminações invisíveis.</p>
 
-    <p>Mesmo água tratada ou mineral pode sofrer alterações até chegar na sua casa.</p>
+    <p>Mesmo água tratada ou mineral pode perder qualidade até chegar na sua casa.</p>
 
-    <h3>👉 A solução é um purificador de qualidade dentro da sua casa</h3>
+    <h3>👉 Proteja sua família com água realmente pura</h3>
 
     <button class="cta" onclick="window.location.href='https://wa.me/5581995655408'">
-    QUERO PROTEGER MINHA FAMÍLIA AGORA
+    QUERO FAZER UM TESTE NA MINHA CASA
     </button>
 
     </div>
