@@ -4,17 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teste da Água</title>
+<title>Descubra a Verdade Sobre Sua Água</title>
 
-<!-- FONTE PROFISSIONAL -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 body {
   margin:0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0A2540, #1E90FF);
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92);
   color:white;
   text-align:center;
 }
@@ -26,21 +25,23 @@ body {
 }
 
 h1 {
-  font-size:26px;
-  font-weight:700;
+  font-size:28px;
+  font-weight:800;
 }
 
 h2 {
-  font-weight:600;
+  font-weight:700;
 }
 
 p {
   font-weight:300;
+  font-size:15px;
 }
 
-.logo {
-  width:120px;
-  margin-bottom:15px;
+img {
+  width:100%;
+  border-radius:12px;
+  margin:15px 0;
 }
 
 button {
@@ -50,15 +51,15 @@ button {
   border:none;
   border-radius:14px;
   background:white;
-  color:#0A2540;
-  font-weight:600;
+  color:#000428;
+  font-weight:700;
   cursor:pointer;
   transition:0.3s;
 }
 
 button:hover {
   transform:scale(1.05);
-  background:#00BFFF;
+  background:#00c6ff;
   color:white;
 }
 
@@ -71,14 +72,14 @@ button:hover {
 
 .bar {
   height:6px;
-  background:#00BFFF;
+  background:#00c6ff;
   width:0%;
   border-radius:10px;
   transition:0.4s;
 }
 
 .fade {
-  animation:fade 0.5s;
+  animation:fade 0.4s;
 }
 
 @keyframes fade {
@@ -87,10 +88,10 @@ button:hover {
 }
 
 .cta {
-  background:#00BFFF;
+  background:#00c6ff;
   color:white;
   font-size:18px;
-  font-weight:700;
+  font-weight:800;
 }
 
 </style>
@@ -100,13 +101,11 @@ button:hover {
 
 <div class="container">
 
-<!-- LOGO (opcional) -->
-<!-- Coloque a logo da ULFER aqui se quiser -->
-<!-- <img src="logo.png" class="logo"> -->
+<h1>⚠️ VOCÊ PODE ESTAR BEBENDO ÁGUA CONTAMINADA SEM SABER</h1>
 
-<h1>⚠️ A água que você bebe pode estar te prejudicando</h1>
+<p>Responda esse teste rápido e descubra o que está escondido na água da sua casa</p>
 
-<p>Responda esse teste rápido e descubra o risco oculto na sua casa</p>
+<img src="ulfer1.jpg">
 
 <div class="progress"><div class="bar" id="bar"></div></div>
 
@@ -117,19 +116,21 @@ button:hover {
 <script>
 
 const perguntas = [
-"De onde vem sua água?",
-"Você já testou sua água?",
-"Você confia 100% nela?",
-"Tem crianças ou idosos na casa?",
-"Se tivesse impurezas invisíveis, você mudaria isso?"
+"Você realmente sabe o que tem na água que sua família bebe TODOS OS DIAS?",
+"Você teria coragem de beber sua água se visse o que existe nela no microscópio?",
+"Você confia mais na sorte ou na qualidade da água que entra na sua casa?",
+"Se sua água estivesse prejudicando sua saúde aos poucos, você perceberia?",
+"Quanto vale a saúde da sua família pra você?",
+"Se existisse uma solução simples pra eliminar esse risco, você faria isso hoje?"
 ];
 
 const opcoes = [
-["Torneira (CAGEPA)","Água mineral","Água de chuva","Não sei"],
-["Sim","Não","Nunca pensei nisso"],
-["Sim","Mais ou menos","Não"],
-["Sim","Não"],
-["Sim na hora","Talvez","Não sei"]
+["Sim, sei exatamente","Nunca pensei nisso","Prefiro nem saber"],
+["Sim","Não","Nunca vi isso"],
+["Confio na sorte","Confio na água","Agora fiquei na dúvida"],
+["Provavelmente não","Acho que sim","Nunca pensei nisso"],
+["Tudo","Depende","Nunca pensei nisso"],
+["Sim, sem pensar","Talvez","Não sei"]
 ];
 
 let atual = 0;
@@ -153,16 +154,18 @@ function proxima(){
     document.getElementById("quiz").innerHTML = `
     <div class="fade">
 
-    <h2>⚠️ RESULTADO: POSSÍVEL RISCO NA SUA ÁGUA</h2>
+    <h2>🚨 ALERTA: SUA ÁGUA PODE ESTAR TE PREJUDICANDO</h2>
 
-    <p>Sua água pode conter excesso de cloro, impurezas e contaminações invisíveis.</p>
+    <img src="ulfer2.jpg">
 
-    <p>Mesmo água tratada ou mineral pode perder qualidade até chegar na sua casa.</p>
+    <p>Mesmo águas tratadas podem conter excesso de cloro, impurezas e contaminações invisíveis.</p>
 
-    <h3>👉 Proteja sua família com água realmente pura</h3>
+    <p>Isso pode afetar sua saúde sem você perceber.</p>
+
+    <h3>👉 A solução é ter controle TOTAL da sua água dentro da sua casa</h3>
 
     <button class="cta" onclick="window.location.href='https://wa.me/5581995655408'">
-    QUERO FAZER UM TESTE NA MINHA CASA
+    QUERO ÁGUA PURA NA MINHA CASA AGORA
     </button>
 
     </div>
