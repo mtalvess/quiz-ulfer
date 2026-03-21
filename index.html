@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste da Água</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#0a2540;
+  color:white;
+  text-align:center;
+}
+
+.container {
+  max-width:500px;
+  margin:auto;
+  padding:20px;
+}
+
+h1 {
+  font-size:26px;
+}
+
+button {
+  width:100%;
+  padding:15px;
+  margin:8px 0;
+  border:none;
+  border-radius:12px;
+  background:white;
+  color:#0a2540;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  transform:scale(1.05);
+}
+
+.progress {
+  height:6px;
+  background:#ffffff30;
+  margin-bottom:20px;
+  border-radius:10px;
+}
+
+.bar {
+  height:6px;
+  background:#00ffcc;
+  width:0%;
+  border-radius:10px;
+  transition:0.4s;
+}
+
+.fade {
+  animation:fade 0.5s;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.cta {
+  background:#00ffcc;
+  color:black;
+  font-size:18px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚠️ A água que você bebe pode estar te prejudicando</h1>
+
+<p>Responda esse teste rápido e descubra o risco oculto na sua casa</p>
+
+<div class="progress"><div class="bar" id="bar"></div></div>
+
+<div id="quiz"></div>
+
+</div>
+
+<script>
+
+const perguntas = [
+"De onde vem sua água?",
+"Você já testou sua água?",
+"Você confia 100% nela?",
+"Tem crianças ou idosos na casa?",
+"Se tivesse impurezas invisíveis, você mudaria?"
+];
+
+const opcoes = [
+["Torneira","Mineral","Chuva","Não sei"],
+["Sim","Não","Nunca pensei"],
+["Sim","Mais ou menos","Não"],
+["Sim","Não"],
+["Sim na hora","Talvez","Não sei"]
+];
+
+let atual = 0;
+
+function carregar(){
+  let html = `<div class="fade"><h2>${perguntas[atual]}</h2>`;
+  opcoes[atual].forEach(o=>{
+    html += `<button onclick="proxima()">${o}</button>`;
+  });
+  html += `</div>`;
+
+  document.getElementById("quiz").innerHTML = html;
+  document.getElementById("bar").style.width = ((atual+1)/perguntas.length)*100 + "%";
+}
+
+function proxima(){
+  atual++;
+  if(atual < perguntas.length){
+    carregar();
+  } else {
+    document.getElementById("quiz").innerHTML = `
+    <div class="fade">
+    <h2>⚠️ RESULTADO: RISCO DETECTADO</h2>
+
+    <p>Sua água pode conter excesso de cloro, impurezas e contaminações invisíveis.</p>
+
+    <p>Mesmo água tratada ou mineral pode sofrer alterações até chegar na sua casa.</p>
+
+    <h3>👉 A solução é um purificador de qualidade dentro da sua casa</h3>
+
+    <button class="cta" onclick="window.location.href='https://wa.me/5581995655408'">
+    QUERO PROTEGER MINHA FAMÍLIA AGORA
+    </button>
+
+    </div>
+    `;
+  }
+}
+
+carregar();
+
+</script>
+
+</body>
+</html>
