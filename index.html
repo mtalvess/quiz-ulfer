@@ -1,142 +1,38 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Descubra a Verdade Sobre Sua Água</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-body {
-  margin:0;
-  font-family:'Poppins', sans-serif;
-  background: linear-gradient(135deg, #000428, #004e92);
-  color:white;
-  text-align:center;
-}
-
-.container {
-  max-width:500px;
-  margin:auto;
-  padding:20px;
-}
-
-h1 {
-  font-size:28px;
-  font-weight:800;
-}
-
-h2 {
-  font-weight:700;
-}
-
-p {
-  font-weight:300;
-  font-size:15px;
-}
-
-img {
-  width:100%;
-  border-radius:12px;
-  margin:15px 0;
-}
-
-button {
-  width:100%;
-  padding:16px;
-  margin:10px 0;
-  border:none;
-  border-radius:14px;
-  background:white;
-  color:#000428;
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover {
-  transform:scale(1.05);
-  background:#00c6ff;
-  color:white;
-}
-
-.progress {
-  height:6px;
-  background:#ffffff30;
-  margin-bottom:20px;
-  border-radius:10px;
-}
-
-.bar {
-  height:6px;
-  background:#00c6ff;
-  width:0%;
-  border-radius:10px;
-  transition:0.4s;
-}
-
-.fade {
-  animation:fade 0.4s;
-}
-
-@keyframes fade {
-  from {opacity:0; transform:translateY(10px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-.cta {
-  background:#00c6ff;
-  color:white;
-  font-size:18px;
-  font-weight:800;
-}
-
-</style>
-</head>
-
-<body>
-
 <div class="container">
 
-<h1>⚠️ VOCÊ PODE ESTAR BEBENDO ÁGUA CONTAMINADA SEM SABER</h1>
-
-<p>Responda esse teste rápido e descubra o que está escondido na água da sua casa</p>
-
-<img src="ulfer1.jpg">
+<h1>⚠️ DESCUBRA SE SUA ÁGUA ESTÁ TE FAZENDO MAL</h1>
+<p>Responda rápido e veja a verdade sobre a água da sua casa</p>
 
 <div class="progress"><div class="bar" id="bar"></div></div>
-
 <div id="quiz"></div>
 
 </div>
 
 <script>
-
 const perguntas = [
-"Você realmente sabe o que tem na água que sua família bebe TODOS OS DIAS?",
-"Você teria coragem de beber sua água se visse o que existe nela no microscópio?",
-"Você confia mais na sorte ou na qualidade da água que entra na sua casa?",
-"Se sua água estivesse prejudicando sua saúde aos poucos, você perceberia?",
-"Quanto vale a saúde da sua família pra você?",
-"Se existisse uma solução simples pra eliminar esse risco, você faria isso hoje?"
+  {text: "Você sabe o que tem na água que sua família bebe?", img:"agua1.jpg"},
+  {text: "Você teria coragem de beber água se visse contaminantes microscopicos?", img:"agua2.jpg"},
+  {text: "Se a água estivesse prejudicando sua saúde aos poucos, você perceberia?", img:"agua3.jpg"},
+  {text: "Quanto vale a saúde da sua família pra você?", img:"familia.jpg"},
+  {text: "Se existisse uma solução simples para água 100% pura, você faria hoje?", img:"ulfer_produto.jpg"}
 ];
 
 const opcoes = [
-["Sim, sei exatamente","Nunca pensei nisso","Prefiro nem saber"],
-["Sim","Não","Nunca vi isso"],
-["Confio na sorte","Confio na água","Agora fiquei na dúvida"],
-["Provavelmente não","Acho que sim","Nunca pensei nisso"],
-["Tudo","Depende","Nunca pensei nisso"],
-["Sim, sem pensar","Talvez","Não sei"]
+  ["Sim, sei","Nunca pensei nisso","Prefiro não saber"],
+  ["Sim","Não","Não sei"],
+  ["Provavelmente não","Acho que sim","Nunca pensei nisso"],
+  ["Tudo","Depende","Não sei"],
+  ["Sim, imediatamente","Talvez","Não sei"]
 ];
 
 let atual = 0;
 
 function carregar(){
-  let html = `<div class="fade"><h2>${perguntas[atual]}</h2>`;
+  let q = perguntas[atual];
+  let html = `<div class="fade">
+                <h2>${q.text}</h2>
+                <img src="${q.img}" style="border-radius:12px; margin:10px 0; width:100%">
+              `;
   opcoes[atual].forEach(o=>{
     html += `<button onclick="proxima()">${o}</button>`;
   });
@@ -153,29 +49,16 @@ function proxima(){
   } else {
     document.getElementById("quiz").innerHTML = `
     <div class="fade">
-
-    <h2>🚨 ALERTA: SUA ÁGUA PODE ESTAR TE PREJUDICANDO</h2>
-
-    <img src="ulfer2.jpg">
-
-    <p>Mesmo águas tratadas podem conter excesso de cloro, impurezas e contaminações invisíveis.</p>
-
-    <p>Isso pode afetar sua saúde sem você perceber.</p>
-
-    <h3>👉 A solução é ter controle TOTAL da sua água dentro da sua casa</h3>
-
-    <button class="cta" onclick="window.location.href='https://wa.me/5581995655408'">
-    QUERO ÁGUA PURA NA MINHA CASA AGORA
-    </button>
-
+      <h2>🚨 SUA ÁGUA PODE ESTAR TE PREJUDICANDO!</h2>
+      <img src="ulfer_final.jpg" style="border-radius:12px; margin:10px 0; width:100%">
+      <p>Mesmo água tratada pode conter impurezas invisíveis. O purificador ULFER garante água pura para você e sua família.</p>
+      <button class="cta" onclick="window.location.href='https://wa.me/5581995655408'">
+        QUERO MINHA ÁGUA PURA AGORA
+      </button>
     </div>
     `;
   }
 }
 
 carregar();
-
 </script>
-
-</body>
-</html>
